@@ -1,0 +1,253 @@
+<html>
+  <head>
+    <title>Chatbot Widget</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Import Font Awesome Icon Font-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+      crossorigin="anonymous"
+    />
+
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/css/materialize.min.css"
+    />
+
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="static/css/style_max.css" />
+
+    <!--Highlight css-->
+    <link rel="stylesheet" type="text/css" href="static/css/a11y-light.min.css"/>
+
+    <!--LayUI css-->
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+      <div style="display: flex; flex-wrap: wrap; height: fit-content;">
+        <div class="widget" style="min-width: 450px;">
+          <div class="chat_header">
+            <!-- <span class="dropdown-trigger-left" href="#" data-target="dropdown2">
+              <i class="material-icons"> menu </i>
+            </span> -->
+            <span class="dropdown-trigger-left" href="#" data-target="dropdown2">
+              <i class="material-icons"> menu </i>
+            </span>
+            
+            <ul id="dropdown2" class="dropdown-content">
+              <li><a href="#" id="English">EN √</a></li>
+              <li><a href="#" id="Chinese">CHS</a></li>
+  <!--            <li><a href="#" id="close">Close</a></li>-->
+            </ul>
+  
+            <!--Add the name of the bot here -->
+            <span class="chat_header_title">Cerebro</span>
+            <span class="dropdown-trigger" href="#" data-target="dropdown1">
+              <i class="material-icons"> more_vert </i>
+            </span>
+  
+            <!-- Dropdown menu-->
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="#" id="clear">Clear</a></li>
+              <li><a href="#" id="restart">Restart</a></li>
+  <!--            <li><a href="#" id="close">Close</a></li>-->
+            </ul>
+  
+          </div>
+  
+          <!--Chatbot contents goes here -->
+          <div class="chats" id="chats">
+            <div class="clearfix"></div>
+          </div>
+          <script>
+            window.addEventListener("message", function(event){
+              var data = event.data;
+              switch (data.cmd) {
+                case 'getDate':
+                  console.log(data)
+                  document.getElementById("userInput").value=data.data;
+  
+                  break;
+              }
+              });
+  
+          </script>
+  
+          <!--keypad for user to type the message -->
+          <div class="keypad">
+            <textarea
+              id="userInput"
+              placeholder="You can ask questions or say goodbye here anytime!"
+              class="usrInput"
+            ></textarea>
+            <div onclick="btn()" id="sendButton">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </div>
+  <!--          <button onclick="btn()">测试</button>-->
+  <!--          <div id="html"></div>-->
+  <!--          <script>-->
+  <!--            var x=document.getElementById("userInput");//获取输入框元素-->
+  <!--            var y=document.getElementById("html"); //获取id为html的元素-->
+  <!--            window.onload=function(){-->
+  <!--              document.onkeydown = function (event) {-->
+  <!--                var e = event || window.event;-->
+  <!--                if (e && e.keyCode == 13) {-->
+  <!--                  var httpRequest = new XMLHttpRequest();//第一步：创建需要的对象-->
+  <!--                  httpRequest.open('POST', 'http://47.116.194.87/Cerebro/user_input/', true); //第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */-->
+  <!--                  httpRequest.setRequestHeader("Content-type","application/json");//设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };-->
+  <!--                  httpRequest.send(JSON.stringify({"input":x.value}));//发送请求 将json写入send中-->
+  <!--                  /**-->
+  <!--                   * 获取数据后的处理程序-->
+  <!--                   */-->
+  <!--                  httpRequest.onreadystatechange = function () {//请求后的回调接口，可将请求成功后要执行的程序写在其中-->
+  <!--                    if (httpRequest.readyState == 4 && httpRequest.status == 200) {//验证请求是否发送成功-->
+  <!--                      var json = httpRequest.responseText;//获取到服务端返回的数据-->
+  <!--                      console.log(json);-->
+  <!--                    }-->
+  <!--                  };                console.log("responseText",this.responseText)}};-->
+  
+  <!--            }-->
+  <!--            function btn(){-->
+  <!--              y.innerHTML =x.value; //将输入框的值赋给div标签-->
+  <!--            }-->
+  <!--          </script>-->
+          </div>
+        </div>
+  
+        <!-- <div class="results" id="results"></div> -->
+        <div class="layui-tab layui-tab-card" id="results" style="width:45%;height: 580px;min-width: 450px; margin-top: 0px; margin-left:3%;float: left;background-color: white;">
+          <ul class="layui-tab-title">
+            <li class="layui-this">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li>
+          </ul>
+          <div class="layui-tab-content" style="padding: 0;height: 539px;">
+            <div class="layui-tab-item layui-show">
+              <pre>
+                <code>
+                  import hljs from 'highlight.js'
+                  import 'highlight.js/styles/idea.css'  //这里有多个样式，自己可以根据需要切换
+                  Vue.use(hljs.vuePlugin);
+                </code>
+              </pre>
+            </div>
+            <div class="layui-tab-item">text2</div>
+            <div class="layui-tab-item">text3</div>
+          </div>
+        </div>
+        
+      </div>
+      <!--chatbot widget -->
+      
+
+      <!--bot profile-->
+      <!-- <div class="profile_div" id="profile_div">
+        <img class="imgProfile" src="static/img/botAvatar.png" />
+      </div> -->
+
+
+      <!-- Bot pop-up intro
+      <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+          <h5 class="white-text">Hey there 👋</h5>
+          <p class="white-text">
+            I can help you get started with Cerebro and answer your technical
+            questions.
+          </p>
+     </div>
+     </div>-->
+<!--    </div>-->
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="static/js/lib/materialize.min.js"
+    ></script>
+    <script src="static/js/lib/uuid.min.js"></script>
+    <!--Main Script -->
+    <script type="text/javascript" src="static/js/script_max.js"></script>
+
+    <!--Chart.js Script -->
+    <script type="text/javascript" src="static/js/lib/chart.min.js"></script>
+    <script type="text/javascript" src="static/js/lib/showdown.min.js"></script>
+    
+    <!--Highlight.js Script-->
+    <script type="text/javascript" src="static/js/lib/highlight.min.js"></script>
+
+    <!--LayUI Script-->
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <script>layui.element.render()</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#in" ).autocomplete({
+      source: availableTags
+    });
+  } );
+    </script>
+  </body>
+</html>

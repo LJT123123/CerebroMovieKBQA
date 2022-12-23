@@ -1,0 +1,308 @@
+<html>
+
+<head>
+  <title>Chatbot Widget</title>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+
+  <!--Import Font Awesome Icon Font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+  <!--Import materialize.css-->
+  <link rel="stylesheet" type="text/css" href="static/css/materialize.min.css" />
+
+  <!--Main css-->
+  <link rel="stylesheet" type="text/css" href="static/css/style_max.css" />
+
+  <!--Highlight css-->
+  <link rel="stylesheet" type="text/css" href="static/css/a11y-light.min.css" />
+
+  <!--LayUI css-->
+  <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+
+  <!--jquery-ui.css-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+  <!--jquery-ui.css-->
+  <link rel="stylesheet" href="static/css/wiki.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div style="display: flex; flex-wrap: wrap; overflow: visible;">
+    <div class="widget" style="min-width: 450px;">
+      <div class="chat_header">
+        <!-- <span class="dropdown-trigger-left" href="#" data-target="dropdown2">
+              <i class="material-icons"> menu </i>
+            </span> -->
+<<<<<<< HEAD
+        <span class="dropdown-trigger-left" href="#" data-target="dropdown2">
+          <i class="material-icons"> menu </i>
+        </span>
+
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a href="#" id="English">EN √</a></li>
+          <li><a href="#" id="Chinese">CHS</a></li>
+          <!--            <li><a href="#" id="close">Close</a></li>-->
+        </ul>
+
+        <!--Add the name of the bot here -->
+        <span class="chat_header_title">电影知识图谱问答系统</span>
+        <span class="dropdown-trigger" href="#" data-target="dropdown1">
+          <i class="material-icons"> more_vert </i>
+        </span>
+
+        <!-- Dropdown menu-->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#" id="clear">Clear</a></li>
+          <li><a href="#" id="restart">Restart</a></li>
+          <!--            <li><a href="#" id="close">Close</a></li>-->
+        </ul>
+
+      </div>
+
+      <!--Chatbot contents goes here -->
+      <div class="chats" id="chats">
+        <div class="clearfix"></div>
+      </div>
+      <script>
+        window.addEventListener("message", function (event) {
+          var data = event.data;
+          switch (data.cmd) {
+            case 'getDate':
+              console.log(data)
+              document.getElementById("userInput").value = data.data;
+
+              break;
+          }
+        });
+
+      </script>
+
+      <!--keypad for user to type the message -->
+      <div class="keypad">
+        <textarea id="userInput" placeholder="You can ask questions or say goodbye here anytime!"
+          class="usrInput"></textarea>
+        <!-- <div onclick="btn()" id="sendButton"> -->
+        <div id="sendButton">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+=======
+            <span class="dropdown-trigger-left" href="#" data-target="dropdown2">
+              <i class="material-icons"> menu </i>
+            </span>
+            
+            <ul id="dropdown2" class="dropdown-content">
+              <li><a href="#" id="English">EN √</a></li>
+              <li><a href="#" id="Chinese">CHS</a></li>
+  <!--            <li><a href="#" id="close">Close</a></li>-->
+            </ul>
+  
+            <!--Add the name of the bot here -->
+            <span class="chat_header_title">Cerebro</span>
+            <span class="dropdown-trigger" href="#" data-target="dropdown1">
+              <i class="material-icons"> more_vert </i>
+            </span>
+  
+            <!-- Dropdown menu-->
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="#" id="clear">Clear</a></li>
+              <li><a href="#" id="restart">Restart</a></li>
+  <!--            <li><a href="#" id="close">Close</a></li>-->
+            </ul>
+  
+          </div>
+  
+          <!--Chatbot contents goes here -->
+          <div class="chats" id="chats">
+            <div class="clearfix"></div>
+          </div>
+          <script>
+            window.addEventListener("message", function(event){
+              var data = event.data;
+              switch (data.cmd) {
+                case 'getDate':
+                  console.log(data)
+                  document.getElementById("userInput").value=data.data;
+  
+                  break;
+              }
+              });
+  
+          </script>
+
+          <!--keypad for user to type the message -->
+          <div class="keypad">
+            <select id="language" style="display: inline; width: 100px; height: 30px; margin-top: 5px;">
+                <option value="">Java</option>
+                <option value="Python - ">Python</option>
+                <option value="JavaScript - ">JavaScript</option>
+                <option value="TypeScript - ">TypeScript</option>
+                <option value="C# - ">C#</option>
+                <option value="Kotlin - ">Kotlin</option>
+            </select>
+            <textarea
+              id="userInput"
+              placeholder="You can ask questions or say goodbye here anytime!"
+              class="usrInput"
+            ></textarea>
+            <!-- <div onclick="btn()" id="sendButton"> -->
+            <div id="sendButton">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+  
+        <!-- <div class="results" id="results"></div> -->
+        <div class="layui-tab layui-tab-brief" id="results" style="width:45%;height: 580px;min-width: 450px; margin-top: 0px; margin-left:3%;float: left;background-color: white;">
+          <ul class="layui-tab-title">
+            <!-- <li class="layui-this">tab1</li>
+            <li>tab2</li>
+            <li>tab3</li> -->
+          </ul>
+          <div class="layui-tab-content" style="padding: 0;height: 539px;">
+            <!-- <div class="layui-tab-item layui-show">text1</div>
+            <div class="layui-tab-item">text2</div>
+            <div class="layui-tab-item">text3</div> -->
+            
+          </div>
+>>>>>>> c7ecb7cf331979c7b391418e3442be23cff35745
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="results" id="results"></div> -->
+    <div class="layui-tab layui-tab-brief" id="results" style="width:45%;height: 580px;min-width: 450px; margin-top: 0px; margin-left:3%;float: left;background-color: white;">
+      <ul class="layui-tab-title">
+        <!-- <li class="layui-this">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li> -->
+      </ul>
+      <div class="layui-tab-content" style="padding: 0;height: 539px; overflow: scroll;">
+        <!-- <div class="layui-tab-item layui-show">text1</div>
+        <div class="layui-tab-item">text2</div>
+        <div class="layui-tab-item">text3</div> -->
+        
+      </div>
+    </div>
+
+  </div>
+  <!--chatbot widget -->
+
+
+  <!--bot profile-->
+  <!-- <div class="profile_div" id="profile_div">
+        <img class="imgProfile" src="static/img/botAvatar.png" />
+      </div> -->
+
+
+  <!-- Bot pop-up intro
+      <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+          <h5 class="white-text">Hey there 👋</h5>
+          <p class="white-text">
+            I can help you get started with Cerebro and answer your technical
+            questions.
+          </p>
+     </div>
+     </div>-->
+  <!--    </div>-->
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="static/js/jquery-3.3.1.min.js"></script>
+  <script src="static/js/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="static/js/lib/materialize.min.js"></script>
+  <script src="static/js/lib/uuid.min.js"></script>
+  <!--Main Script -->
+  <script type="text/javascript" src="static/js/script_max.js"></script>
+
+  <!--Chart.js Script -->
+  <script type="text/javascript" src="static/js/lib/chart.min.js"></script>
+  <script type="text/javascript" src="static/js/lib/showdown.min.js"></script>
+
+<<<<<<< HEAD
+  <!--Highlight.js Script-->
+  <script type="text/javascript" src="static/js/lib/highlight.min.js"></script>
+
+  <!--LayUI Script-->
+  <script type="text/javascript" src="layui/layui.js"></script>
+  <script>layui.element.render()</script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+  <script type="text/javascript" src="static/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="static/js/echarts.js"></script>
+  <script type="text/javascript">
+    // define config car
+    // instantiate nodevis object
+    // draw
+=======
+    <!--LayUI Script-->
+    <script type="text/javascript" src="layui/layui.js"></script>
+    <script>layui.element.render()</script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
+    <script type="text/javascript" src="static/js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+    
+        $( "#userInput" ).autocomplete({
+          source: function(request, response) {
+            $.ajax({
+              url: `http://139.224.110.19:9902/es/api/_search`,
+              type: "POST",
+              contentType: "application/json",
+              data: JSON.stringify({
+                "alias": $('#userInput').val()
+              }),
+              success(data, status) {
+                console.log("Response from Rasa: ", data, "\nStatus: ", status);
+
+                var mycars=new Array()
+					      for(var i=0;i<data.data.length;i++){
+						      mycars[i]=data.data[i].alias;
+					      }
+					      response(mycars.slice(0, 10));
+              },
+              error(xhr, textStatus) {
+                // if there is no response from rasa server
+                console.log("Error from bot end: ", textStatus);
+              },
+            });
+		      },
+          position: { my : "left bottom", at: "left top", collision: "flip"}
+        });
+      });
+    </script>
+>>>>>>> c7ecb7cf331979c7b391418e3442be23cff35745
+
+
+    // function draw(data, link) {
+    //   var myChart = echarts.init(document.getElementById('viz'));
+    //   var categories = [{name:"Movie"},{name:"Star"},{name:"Director"}];
+    //   option = {
+    //     data: data,
+    //     links: link,
+    //     categories: categories
+    //   }
+    //   myChart.setOption(option)
+    // }
+  </script>
+
+
+</body>
+
+</html>
